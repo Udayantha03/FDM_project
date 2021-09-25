@@ -75,6 +75,10 @@
   }
 }
 
+.imgss {
+ text-shadow: #000000 2px 0 10px;
+}
+
 body {
   margin: 0;
   font-family: var(--bs-body-font-family);
@@ -235,11 +239,11 @@ sup {
 }
 
 a {
-  color: #f4623a;
-  text-decoration: underline;
+  color: black;
+  #text-decoration: underline overline;
 }
 a:hover {
-  color: #c34e2e;
+  color: #2550ec;
 }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
@@ -3026,24 +3030,24 @@ textarea.form-control-lg {
 
 .btn-primary {
   color: #fff;
-  background-color: #f4623a;
-  border-color: #f4623a;
+  background-color: #2550ec;
+  border-color: #1979a3;
 }
 .btn-primary:hover {
-  color: #fff;
-  background-color: #cf5331;
-  border-color: #c34e2e;
+  color: #2550ec;
+  background-color: #fff;
+  border-color: #1979a3;
 }
 .btn-check:focus + .btn-primary, .btn-primary:focus {
-  color: #fff;
-  background-color: #cf5331;
-  border-color: #c34e2e;
+  color: black;
+  background-color: #2550ec;
+  border-color: black;
   box-shadow: 0 0 0 0.25rem rgba(246, 122, 88, 0.5);
 }
 .btn-check:checked + .btn-primary, .btn-check:active + .btn-primary, .btn-primary:active, .btn-primary.active, .show > .btn-primary.dropdown-toggle {
   color: #fff;
-  background-color: #c34e2e;
-  border-color: #b74a2c;
+  background-color: #2550ec;
+  border-color: black;
 }
 .btn-check:checked + .btn-primary:focus, .btn-check:active + .btn-primary:focus, .btn-primary:active:focus, .btn-primary.active:focus, .show > .btn-primary.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.25rem rgba(246, 122, 88, 0.5);
@@ -7705,7 +7709,7 @@ textarea.form-control-lg {
 /* rtl:end:remove */
 .text-primary {
   --bs-text-opacity: 1;
-  color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity)) !important;
+  color: #2550ec !important;
 }
 
 .text-secondary {
@@ -11306,7 +11310,7 @@ hr.divider {
   height: 0.2rem;
   max-width: 3.25rem;
   margin: 1.5rem auto;
-  background-color: #f4623a;
+  background-color: #2550ec;
   opacity: 1;
 }
 
@@ -11332,10 +11336,10 @@ hr.divider-light {
   padding: 0.75rem 0;
 }
 #mainNav .navbar-nav .nav-item .nav-link:hover, #mainNav .navbar-nav .nav-item .nav-link:active {
-  color: #f4623a;
+  color: #2550ec;
 }
 #mainNav .navbar-nav .nav-item .nav-link.active {
-  color: #f4623a !important;
+  color: #2550ec !important;
 }
 @media (min-width: 992px) {
   #mainNav {
@@ -11343,17 +11347,20 @@ hr.divider-light {
     background-color: transparent;
   }
   #mainNav .navbar-brand {
-    color: rgba(255, 255, 255, 0.7);
+    color: white;
+    border-color: black;
   }
   #mainNav .navbar-brand:hover {
-    color: #fff;
+    color: black;
   }
   #mainNav .navbar-nav .nav-item .nav-link {
-    color: rgba(255, 255, 255, 0.7);
+    color: white;
     padding: 0 1rem;
+    border-color: black;
   }
   #mainNav .navbar-nav .nav-item .nav-link:hover {
-    color: #fff;
+    color: bisque;
+    border-color: black;
   }
   #mainNav .navbar-nav .nav-item:last-child .nav-link {
     padding-right: 0;
@@ -11366,22 +11373,20 @@ hr.divider-light {
     color: #212529;
   }
   #mainNav.navbar-shrink .navbar-brand:hover {
-    color: #f4623a;
+    color: #2550ec;
   }
   #mainNav.navbar-shrink .navbar-nav .nav-item .nav-link {
     color: #212529;
   }
   #mainNav.navbar-shrink .navbar-nav .nav-item .nav-link:hover {
-    color: #f4623a;
+    color: #2550ec;
   }
 }
 
 header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 4.5rem);
-  /**background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("../assets/img/bg-masthead.jpg");**/
-  /**background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("../assets/robot.jpg");**/
-  background: linear-gradient(to bottom, rgba(168,166,165, 0.8) 0%, rgba(168,166,165, 0.8) 100%), url("../static/images/robot.jpg");
+  background: linear-gradient(to bottom, rgba(25,121,1636, 0.8) 0%, rgba(25,121,163, 0.8) 100%), url("../static/images/robot.jpg");
   /**background: url("../assets/robot.jpg"); 228,225,223 **/
   background-position: center;
   background-repeat: no-repeat;
@@ -11405,6 +11410,43 @@ header.masthead h1, header.masthead .h1 {
     font-size: 3rem;
   }
 }
+
+
+
+
+
+
+
+header.masthead1 {
+  padding-top: 10rem;
+  padding-bottom: calc(10rem - 4.5rem);
+  background: linear-gradient(to bottom, rgba(25,121,1636, 0.8) 0%, rgba(25,121,163, 0.8) 100%), url("../static/images/robot.jpg");
+  /**background: url("../assets/robot.jpg"); 228,225,223 **/
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+}
+header.masthead1 h1, header.masthead1 .h1 {
+  font-size: 2.25rem;
+}
+@media (min-width: 992px) {
+  header.masthead1 {
+    height: 5vh;
+    min-height: 5rem;
+    padding-top: 4.5rem;
+    padding-bottom: 0;
+  }
+  header.masthead1 p {
+    font-size: 1.15rem;
+  }
+  header.masthead1 h1, header.masthead1 .h1 {
+    font-size: 3rem;
+  }
+}
+
+
+
+
 @media (min-width: 1200px) {
   header.masthead h1, header.masthead .h1 {
     font-size: 3.5rem;

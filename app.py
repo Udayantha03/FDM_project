@@ -13,8 +13,8 @@ def association_start():
     return render_template('association.html')
 
 
-@app.route('/full_list')
-def full_list_start():
+@app.route('/classification')
+def classification_start():
     return render_template('full_list.html')
 
 

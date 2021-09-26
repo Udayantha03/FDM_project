@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Classification</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="static/images/favicon.ico" />
+    <!-- Bootstrap Icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+    <!-- SimpleLightbox plugin CSS-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+</head>
+<body>
+    <form action="/predict" method="post">
+        <table>
+            <tr>
+                <td>Gender : </td>
+                <td>
+                    <select>
+                        <option selected>Select Gender</option>
+                        <option value=1>Male</option>
+                        <option value=0>Female</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Flag Own Car:</td>
+                <td>
+                    <select>
+                        <option selected>Select option</option>
+                        <option value=1>Yes</option>
+                        <option value=0>No</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Flag Own Realty:</td>
+                <td>
+                    <select>
+                        <option selected>Select option</option>
+                        <option value=1>Yes</option>
+                        <option value=0>No</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>No Of Children :</td>
+                <td>
+                    <input type="number" min="0" max="20" placeholder="0-20" required>
+                </td>
+            </tr>
+            <tr>
+                <td>Total Income :</td>
+                <td>
+                    <input type="number" placeholder="Enter Your Income" required>
+                </td>
+            </tr>
+            <tr>
+                <td>Income Type :</td>
+                <td>
+                    <select>
+                        <option selected>Select option</option>
+                        <option value=0>Commercial associate</option>
+                        <option value=0>State servant</option>
+                        <option value=0>Working</option>
+                        <option value=1>Pensioner</option>
+                        <option value=2>Student</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Education Type :</td>
+                <td>
+                    <select>
+                        <option selected>Select option</option>
+                        <option value=0>Secondary / secondary special</option>
+                        <option value=0>Lower secondary</option>
+                        <option value=1>Higher education</option>
+                        <option value=1>Incomplete higher</option>
+                        <option value=2>Academic degree</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Family Status :</td>
+                <td>
+                    <select>
+                        <option selected>Select option</option>
+                        <option value=1>Single / not married</option>
+                        <option value=1>Separated</option>
+                        <option value=1>Widow</option>
+                        <option value=0>Married</option>
+                        <option value=0>Civil marriage</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Housing Type :</td>
+                <td>
+                    <select>
+                        <option selected>Select option</option>
+                        <option value=1>House / apartment</option>
+                        <option value=1>Municipal apartment</option>
+                        <option value=1>Rented apartment</option>
+                        <option value=1>Office apartment</option>
+                        <option value=1>Co-op apartment</option>
+                        <option value=0>With parents</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Age :</td>
+                <td>
+                    <input type="number" placeholder="Enter Your Age" required>
+                </td>
+            </tr>
+            <tr>
+                <td>Years of Experience :</td>
+                <td>
+                    <input type="number" placeholder="Enter Your Years of Experience" required>
+                </td>
+            </tr>
+            <tr>
+                <td>Occupation Type :</td>
+                <td>
+                    <select>
+                        <option selected>Select option</option>
+                        <option value=0>Accountants</option>
+                        <option value=1>Cleaning staff</option>
+                        <option value=2>Cooking staff</option>
+                        <option value=3>Core staff</option>
+                        <option value=4>Drivers</option>
+                        <option value=5>HR staff</option>
+                        <option value=6>High skill tech staff</option>
+                        <option value=7>IT staff</option>
+                        <option value=8>Laborers</option>
+                        <option value=9>Low-skill Laborers</option>
+                        <option value=10>Managers</option>
+                        <option value=11>Medicine staff</option>
+                        <option value=12>Private service staff</option>
+                        <option value=13>Realty agents</option>
+                        <option value=14>Sales staff</option>
+                        <option value=15>Secretaries</option>
+                        <option value=16>Security staff</option>
+                        <option value=17>Waiters/barmen staff</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>No Of Family Members :</td>
+                <td>
+                    <input type="number" min="0" max="20" placeholder="0-20" required>
+                </td>
+            </tr>
+            <tr>
+                <td>No Of Paid Off :</td>
+                <td>
+                    <input type="number" min="0" max="50" placeholder="0-50" required>
+                </td>
+            </tr>
+            <tr>
+                <td>No Of Past Dues :</td>
+                <td>
+                    <input type="number" min="0" max="60" placeholder="0-60" required>
+                </td>
+            </tr>
+            <tr>
+                <td>No Of No Loan :</td>
+                <td>
+                    <input type="number" min="0" max="20" placeholder="0-20" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="reset">Cancel</button>
+                </td>
+                <td>
+                    <button type="submit">Predict</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+</html>

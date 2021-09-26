@@ -15,7 +15,7 @@ def association_start():
 
 @app.route('/classification')
 def classification_start():
-    return render_template('association.html')
+    return render_template('classification.html')
 
 
 if __name__ == '__main__':

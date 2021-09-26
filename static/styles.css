@@ -11488,3 +11488,23 @@ header.masthead1 h1, header.masthead1 .h1 {
 #portfolio .container-fluid .portfolio-box:hover .portfolio-box-caption, #portfolio .container-sm .portfolio-box:hover .portfolio-box-caption, #portfolio .container-md .portfolio-box:hover .portfolio-box-caption, #portfolio .container-lg .portfolio-box:hover .portfolio-box-caption, #portfolio .container-xl .portfolio-box:hover .portfolio-box-caption, #portfolio .container-xxl .portfolio-box:hover .portfolio-box-caption {
   opacity: 1;
 }
+
+/***** Style Sheet for Product Recommendation Page**/
+.gradient-custom {
+  background: #dcdcdc;
+  background: -webkit-linear-gradient(to bottom right, rgb(223, 233, 246), rgb(104, 151, 236));
+  background: linear-gradient(to bottom right, rgba(223, 233, 246, 1), rgba(104, 151, 236, 1))
+}
+
+
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+  font-size: 1rem;
+  line-height: 2.15;
+  padding-left: .75em;
+  padding-right: .75em;
+}
+.card-registration .select-arrow {
+  top: 13px;
+}
+
+/***** Style Sheet end for Product Recommendation Page**/

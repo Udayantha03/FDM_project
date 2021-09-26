@@ -19,15 +19,15 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
 </head>
 <body>
-    <form action="/predict" method="post">
-        <table>
+    <form action="{{ url_for('predict')}}" method="POST">
+    <!--    <table>
             <tr>
                 <td>Gender : </td>
                 <td>
                     <select>
                         <option selected>Select Gender</option>
-                        <option value=1>Male</option>
-                        <option value=0>Female</option>
+                        <option value="1">Male</option>
+                        <option value="0">Female</option>
                     </select>
                 </td>
             </tr>
@@ -36,8 +36,8 @@
                 <td>
                     <select>
                         <option selected>Select option</option>
-                        <option value=1>Yes</option>
-                        <option value=0>No</option>
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
                     </select>
                 </td>
             </tr>
@@ -46,8 +46,8 @@
                 <td>
                     <select>
                         <option selected>Select option</option>
-                        <option value=1>Yes</option>
-                        <option value=0>No</option>
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
                     </select>
                 </td>
             </tr>
@@ -68,11 +68,11 @@
                 <td>
                     <select>
                         <option selected>Select option</option>
-                        <option value=0>Commercial associate</option>
-                        <option value=0>State servant</option>
-                        <option value=0>Working</option>
-                        <option value=1>Pensioner</option>
-                        <option value=2>Student</option>
+                        <option value="0">Commercial associate</option>
+                        <option value="0">State servant</option>
+                        <option value="0">Working</option>
+                        <option value="1">Pensioner</option>
+                        <option value="2">Student</option>
                     </select>
                 </td>
             </tr>
@@ -81,11 +81,11 @@
                 <td>
                     <select>
                         <option selected>Select option</option>
-                        <option value=0>Secondary / secondary special</option>
-                        <option value=0>Lower secondary</option>
-                        <option value=1>Higher education</option>
-                        <option value=1>Incomplete higher</option>
-                        <option value=2>Academic degree</option>
+                        <option value="0">Secondary / secondary special</option>
+                        <option value="0">Lower secondary</option>
+                        <option value="1">Higher education</option>
+                        <option value="1">Incomplete higher</option>
+                        <option value="2">Academic degree</option>
                     </select>
                 </td>
             </tr>
@@ -94,11 +94,11 @@
                 <td>
                     <select>
                         <option selected>Select option</option>
-                        <option value=1>Single / not married</option>
-                        <option value=1>Separated</option>
-                        <option value=1>Widow</option>
-                        <option value=0>Married</option>
-                        <option value=0>Civil marriage</option>
+                        <option value="1">Single / not married</option>
+                        <option value="1">Separated</option>
+                        <option value="1">Widow</option>
+                        <option value="0">Married</option>
+                        <option value="0">Civil marriage</option>
                     </select>
                 </td>
             </tr>
@@ -107,12 +107,12 @@
                 <td>
                     <select>
                         <option selected>Select option</option>
-                        <option value=1>House / apartment</option>
-                        <option value=1>Municipal apartment</option>
-                        <option value=1>Rented apartment</option>
-                        <option value=1>Office apartment</option>
-                        <option value=1>Co-op apartment</option>
-                        <option value=0>With parents</option>
+                        <option value="1">House / apartment</option>
+                        <option value="1">Municipal apartment</option>
+                        <option value="1">Rented apartment</option>
+                        <option value="1">Office apartment</option>
+                        <option value="1">Co-op apartment</option>
+                        <option value="0">With parents</option>
                     </select>
                 </td>
             </tr>
@@ -133,24 +133,24 @@
                 <td>
                     <select>
                         <option selected>Select option</option>
-                        <option value=0>Accountants</option>
-                        <option value=1>Cleaning staff</option>
-                        <option value=2>Cooking staff</option>
-                        <option value=3>Core staff</option>
-                        <option value=4>Drivers</option>
-                        <option value=5>HR staff</option>
-                        <option value=6>High skill tech staff</option>
-                        <option value=7>IT staff</option>
-                        <option value=8>Laborers</option>
-                        <option value=9>Low-skill Laborers</option>
-                        <option value=10>Managers</option>
-                        <option value=11>Medicine staff</option>
-                        <option value=12>Private service staff</option>
-                        <option value=13>Realty agents</option>
-                        <option value=14>Sales staff</option>
-                        <option value=15>Secretaries</option>
-                        <option value=16>Security staff</option>
-                        <option value=17>Waiters/barmen staff</option>
+                        <option value="0">Accountants</option>
+                        <option value="1">Cleaning staff</option>
+                        <option value="2">Cooking staff</option>
+                        <option value="3">Core staff</option>
+                        <option value="4">Drivers</option>
+                        <option value="5">HR staff</option>
+                        <option value="6">High skill tech staff</option>
+                        <option value="7">IT staff</option>
+                        <option value="8">Laborers</option>
+                        <option value="9">Low-skill Laborers</option>
+                        <option value="10">Managers</option>
+                        <option value="11">Medicine staff</option>
+                        <option value="12">Private service staff</option>
+                        <option value="13">Realty agents</option>
+                        <option value="14">Sales staff</option>
+                        <option value="15">Secretaries</option>
+                        <option value="16">Security staff</option>
+                        <option value="17">Waiters/barmen staff</option>
                     </select>
                 </td>
             </tr>
@@ -187,7 +187,13 @@
                 </td>
             </tr>
         </table>
-    </form>
+        -->
+        <input type="text" placeholder="0-20" required>
+        <input type="text" placeholder="aaaaaaa" required>
 
+         <button type="submit">Predict</button>
+    </form>
+    <br><br>
+    {{ prediction_text }}
 </body>
 </html>

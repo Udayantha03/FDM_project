@@ -15,12 +15,7 @@ def association_start():
 
 @app.route('/classification')
 def classification_start():
-    return render_template('full_list.html')
-
-
-@app.route('/product')
-def product_start():
-    return render_template('product.html')
+    return render_template('association.html')
 
 
 if __name__ == '__main__':

@@ -1,6 +1,7 @@
 import numpy as np
 from flask import Flask, request, jsonify, render_template
 import pickle
+import model as md
 
 app = Flask(__name__)
 model = pickle.load(open('model.pkl', 'rb'))
@@ -19,13 +20,37 @@ def classification_start():
     return render_template('classification.html')
 
 
-@app.route('/predict', methods=['POST'])
+@app.route('/predict', methods=['GET', 'POST'])
 def predict():
-    features = [int(x) for x in request.form.values()]
-    final_features = [np.array(features)]
-    prediction = model.predict(final_features)
+    fields = []
+    if request.method == "POST":
+        fields_1 = request.form.get('gender')
+        fields_2 = request.form.get('car')
+        fields_3 = request.form.get('realty')
+        fields_4 = request.form.get('child')
+        fields_5 = request.form.get('income')
+        fields_6 = request.form.get('income_type')
+        fields_7 = request.form.get('educate')
+        fields_8 = request.form.get('fam_stat')
+        fields_9 = request.form.get('hou_type')
+        fields_10 = request.form.get('age')
+        fields_11 = request.form.get('experience')
+        fields_12 = request.form.get('occ')
+        fields_13 = request.form.get('fam_mem')
+        fields_14 = request.form.get('paid_off')
+        fields_15 = request.form.get('past_dues')
+        fields_16 = request.form.get('no_loan')
 
-    return render_template('classification.html', prediction_text='Customer is {}'.format(prediction))
+        prediction = md.predict_classification(fields_1, fields_2, fields_3, fields_4, fields_5, fields_6, fields_7, fields_8,
+                                               fields_9, fields_10, fields_11, fields_12, fields_13, fields_14, fields_15,
+                                               fields_16)
+
+        if prediction == 1:
+            output = 'GOOD'
+        else:
+            output = 'BAD'
+
+    return render_template('classification.html', prediction_text='Customer is {}'.format(output))
 
 
 if __name__ == '__main__':

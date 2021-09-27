@@ -11386,7 +11386,7 @@ hr.divider-light {
 header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 4.5rem);
-  background: linear-gradient(to bottom, rgba(25,121,1636, 0.8) 0%, rgba(25,121,163, 0.8) 100%), url("../static/images/robot.jpg");
+  background: linear-gradient(to bottom, rgba(25,121,1636, 0.8) 0%, rgba(25,121,163, 0.8) 100%), url("../static/images/baby.jpg");
   /**background: url("../assets/robot.jpg"); 228,225,223 **/
   background-position: center;
   background-repeat: no-repeat;
@@ -11420,7 +11420,7 @@ header.masthead h1, header.masthead .h1 {
 header.masthead1 {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 4.5rem);
-  background: linear-gradient(to bottom, rgba(25,121,1636, 0.8) 0%, rgba(25,121,163, 0.8) 100%), url("../static/images/robot.jpg");
+  background: linear-gradient(to bottom, rgba(25,121,1636, 0.8) 0%, rgba(25,121,163, 0.8) 100%), url("../static/images/baby.jpg");
   /**background: url("../assets/robot.jpg"); 228,225,223 **/
   background-position: center;
   background-repeat: no-repeat;

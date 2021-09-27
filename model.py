@@ -11,7 +11,7 @@ import warnings
 warnings.filterwarnings('ignore')
 
 def predict_classification(gender, car, realty, child, income, income_type, educ_type, fam_stat, hou_type, age, exp, occ, fam_mem, paid_off, past_dues, no_loan):
-    dataset = pd.read_csv('C:/Users/Raisul Zulfikar/Desktop/Credit Card/Clean_dataset.csv')
+    dataset = pd.read_csv('Clean_dataset.csv')
 
     dataset = dataset.iloc[:, 1:18]
     # print(dataset.head())

@@ -1,8 +1,10 @@
+import numpy as np
 from flask import Flask, request, jsonify, render_template
 import util as util
+import pickle
 
 app = Flask(__name__)
-
+model = pickle.load(open('model.pkl', 'rb'))
 
 @app.route('/')
 def welcome():
@@ -13,10 +15,18 @@ def welcome():
 def association_start():
     return render_template('association.html')
 
-
 @app.route('/classification')
 def classification_start():
-    return render_template('association.html')
+    return render_template('classification.html')
+
+
+@app.route('/predict', methods=['POST'])
+def predict():
+    features = [int(x) for x in request.form.values()]
+    final_features = [np.array(features)]
+    prediction = model.predict(final_features)
+
+    return render_template('classification.html', prediction_text='Customer is {}'.format(prediction))
 
 
 @app.route("/rule", methods=["GET", "POST"])

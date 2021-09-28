@@ -10,8 +10,8 @@ import pickle
 import warnings
 warnings.filterwarnings('ignore')
 
-def predict_classification(gender, car, realty, child, income, income_type, educ_type, fam_stat, hou_type, age, exp, occ, fam_mem, paid_off, past_dues, no_loan):
-    dataset = pd.read_csv('Clean_dataset.csv')
+def predict_classification(gender, car, realty, child, income, income_type, educ_type, fam_stat, hou_type, age, exp, occ, paid_off, past_dues, no_loan):
+    dataset = pd.read_csv('Credit_Card_final.csv')
 
     dataset = dataset.iloc[:, 1:18]
     # print(dataset.head())
@@ -38,7 +38,7 @@ def predict_classification(gender, car, realty, child, income, income_type, educ
 
     model = pickle.load(open('model.pkl', 'rb'))
     output = model.predict([[gender, car, realty, child, income, income_type, educ_type, fam_stat, hou_type, age, exp, occ,
-                             fam_mem, paid_off, past_dues, no_loan]])
+                             paid_off, past_dues, no_loan]])
 
     # print('Customer is : ', output)
 

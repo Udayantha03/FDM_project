@@ -51,14 +51,14 @@ def predict():
         fields_10 = request.form.get('age')
         fields_11 = request.form.get('experience')
         fields_12 = request.form.get('occ')
-        fields_13 = request.form.get('fam_mem')
-        fields_14 = request.form.get('paid_off')
-        fields_15 = request.form.get('past_dues')
-        fields_16 = request.form.get('no_loan')
+
+        fields_13 = request.form.get('paid_off')
+        fields_14 = request.form.get('past_dues')
+        fields_15 = request.form.get('no_loan')
 
         prediction = md.predict_classification(fields_1, fields_2, fields_3, fields_4, fields_5, fields_6, fields_7, fields_8,
                                                fields_9, fields_10, fields_11, fields_12, fields_13, fields_14, fields_15,
-                                               fields_16)
+                                               )
 
         print("prediction",prediction)
         if prediction == 1:

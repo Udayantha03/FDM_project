@@ -1,8 +1,11 @@
+import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
 from flask import Flask, request, jsonify, render_template
 import util as util
 import pickle
 import model as md
+from pandas.plotting import parallel_coordinates
 
 app = Flask(__name__)
 model = pickle.load(open('model.pkl', 'rb'))
@@ -14,6 +17,17 @@ def welcome():
 
 @app.route('/association')
 def association_start():
+    coords = util.parallelPlot()
+    # Generate parallel coordinates plot
+    plt.title('Parallel Coordinate Plot')
+    # plt.xlabel("x")
+    # plt.ylabel("y")
+    plt.figure(figsize=(4,8))
+    parallel_coordinates(coords, 'rule')
+    plt.legend([])
+    plt.grid(True)
+    plt.savefig('static/' + 'plot1.png', dpi=600, edgecolor="#04253a")
+    plt.close()
     return render_template('association.html')
 
 @app.route('/classification')
@@ -46,6 +60,7 @@ def predict():
                                                fields_9, fields_10, fields_11, fields_12, fields_13, fields_14, fields_15,
                                                fields_16)
 
+        print("prediction",prediction)
         if prediction == 1:
             output = 'GOOD'
         else:

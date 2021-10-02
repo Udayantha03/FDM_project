@@ -11596,8 +11596,9 @@ header.masthead1 h1, header.masthead1 .h1 {
 
 .table{
     background-repeat: no-repeat;
-    background: linear-gradient(to bottom, rgba(236, 210, 113, 0.4) 0%, rgba(233, 135, 16, 0.3) 100%), url("../static/b1.jpg");
-    /**background-image: url("../static/b1.jpg");
+    background: url("../static/b1.jpg");
+    /**background: linear-gradient(to bottom, rgba(236, 210, 113, 0.4) 0%, rgba(233, 135, 16, 0.3) 100%), url("../static/b3.PNG");
+    background-image: url("../static/b1.jpg");
      background: linear-gradient(to bottom, rgba(25, 121, 255, 0.2) 0%, rgba(25,121,163, 0.2) 100%), url("../static/images/baby.jpg");**/
     height: 600px;
     width: 600px;

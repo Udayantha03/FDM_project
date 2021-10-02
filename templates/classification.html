@@ -45,20 +45,69 @@
 
         .pd_text{
             margin: auto;
-            margin-top: 400px;
+            margin-top: 10px;
             width: 60%;
-            border: 6px solid white;
             color: navy-blue;
             text-align: center;
             padding: 10px;
+            font-size: 28px;
+        }
+        .pd_result{
+            margin: auto;
+            margin-top: 10px;
+            width: 60%;
+            color: navy-blue;
+            text-align: center;
+            padding: 10px;
+            font-size: 28px;
+        }
+
+        .text-block {
+            position: relative;
+            bottom: 5px;
+            right: 20px;
+            margin-top: 100px;
+            background-color: black;
+            color: white;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-bottom: 50px;
+            opacity: 0.7;
+        }
+
+        section.background {
+            background: url(../static/images/bg.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            border: 2px solid black;
+            opacity: 0.8;
+        }
+
+        div.transbox {
+            margin: 25px;
+            background-color: white;
+            border: 1px solid black;
+            opacity: 0.8;
+        }
+        .fields{
+            margin-top: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            color: 2px solid black;
+        }
+
+        .images{
+            right: 20px;
+            padding-left: 10px;
+            padding-right: 10px;
         }
     </style>
 </head>
-<body>
+<body id="page-top">
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
     <div class="container px-4 px-lg-5">
-        <a class="navbar-brand" href="#page-top">PREDICT CUSTOMER</a>
+        <a class="navbar-brand" href="#page-top">PRODUCT RECOMMENDATION</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
                 aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -72,7 +121,6 @@
         </div>
     </div>
 </nav>
-
 <!-- Masthead-->
 <header class="masthead1">
     <div class="container px-4 px-lg-5 h-100">
@@ -81,17 +129,18 @@
     </div>
 </header>
 
-
-<section class="vh-150 gradient-custom">
+<section class="background">
     <div class="row">
         <div class="column">
             <div class="container py-8 h-200">
                 <div class="row justify-content-center align-items-center h-100">
-                    <div class="col-10 col-lg-12 col-xl-9">
+                    <div class="background">
+                        <div class="transbox" width="500" height="500">
+                    <!--<div class="col-10 col-lg-12 col-xl-10">
                         <div class="card shadow-2-strong card-registration" style="border-radius: 15px; width:500px; float:left;">
-                            <div class="card-body p-3 p-md-5">
+                            <div class="card-body p-3 p-md-5">-->
                                 <form action="{{ url_for('predict')}}" method="POST">
-                                    <div class="row">
+                                    <div class="row fields">
                                         <div class="col-md-8 mb-1">
                                             <div class="form-outline">
                                                 <label class="form-label">Enter details to Proceed ... </label>
@@ -99,11 +148,11 @@
                                         </div>
 
                                         <div class="container">
-                                            <div class="row" style="margin-bottom:7px">
-                                                <div class="col-5">
+                                            <div class="row fields" >
+                                                <div class="col-6">
                                                     <label class="form-label">Gender :</label>
                                                 </div>
-                                                <div class="col-5">
+                                                <div class="col-6">
                                                     <select class="select form-control" name="gender">
                                                         <option selected>Select option</option>
                                                         <option value="1">Male</option>
@@ -111,11 +160,11 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="row" style="margin-bottom:7px">
-                                                <div class="col-5">
+                                            <div class="row fields" >
+                                                <div class="col-6">
                                                     <label class="form-label">Flag Own Car :</label>
                                                 </div>
-                                                <div class="col-5">
+                                                <div class="col-6">
                                                     <select class="select form-control" name="car">
                                                         <option selected>Select option</option>
                                                         <option value="1">Yes</option>
@@ -123,11 +172,11 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="row" style="margin-bottom:7px">
-                                                <div class="col-5">
+                                            <div class="row fields">
+                                                <div class="col-6">
                                                     <label class="form-label">Flag Own Realty :</label>
                                                 </div>
-                                                <div class="col-5">
+                                                <div class="col-6">
                                                     <select class="select form-control" name="realty">
                                                         <option selected>Select option</option>
                                                         <option value="1">Yes</option>
@@ -135,104 +184,104 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="row" style="margin-bottom:7px">
-                                                <div class="col-5">
+                                            <div class="row fields">
+                                                <div class="col-6">
                                                     <label class="form-label">No Of Children :</label>
                                                 </div>
-                                                <div class="col-5">
+                                                <div class="col-6">
                                                     <input type="number" class="select form-control" name="child" min="0" max="20" placeholder="0-20" required>
                                                 </div>
                                             </div>
-                                            <div class="row" style="margin-bottom:7px">
-                                                <div class="col-5">
+                                            <div class="row fields">
+                                                <div class="col-6">
                                                     <label class="form-label">Total Income :</label>
                                                 </div>
-                                                <div class="col-5">
+                                                <div class="col-6">
                                                     <input type="number" class="select form-control" name="income" placeholder="Enter Your Income" required>
                                                 </div>
                                             </div>
-                                            <div class="row" style="margin-bottom:7px">
-                                                <div class="col-5">
+                                            <div class="row fields">
+                                                <div class="col-6">
                                                     <label class="form-label">Income Type :</label>
                                                 </div>
-                                                <div class="col-5">
+                                                <div class="col-6">
                                                     <select class="select form-control" name="income_type">
                                                         <option selected>Select option</option>
                                                         <option value="0">Commercial associate</option>
-                                                        <option value="0">State servant</option>
-                                                        <option value="0">Working</option>
-                                                        <option value="1">Pensioner</option>
-                                                        <option value="2">Student</option>
+                                                        <option value="1">State servant</option>
+                                                        <option value="2">Working</option>
+                                                        <option value="3">Pensioner</option>
+                                                        <option value="4">Student</option>
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="row" style="margin-bottom:7px">
-                                                <div class="col-5">
+                                            <div class="row fields">
+                                                <div class="col-6">
                                                     <label class="form-label">Education Type :</label>
                                                 </div>
-                                                <div class="col-5">
+                                                <div class="col-6">
                                                     <select class="select form-control" name="educate">
                                                         <option selected>Select option</option>
                                                         <option value="0">Secondary / secondary special</option>
-                                                        <option value="0">Lower secondary</option>
-                                                        <option value="1">Higher education</option>
-                                                        <option value="1">Incomplete higher</option>
-                                                        <option value="2">Academic degree</option>
+                                                        <option value="1">Lower secondary</option>
+                                                        <option value="2">Higher education</option>
+                                                        <option value="3">Incomplete higher</option>
+                                                        <option value="4">Academic degree</option>
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="row" style="margin-bottom:7px">
-                                                <div class="col-5">
+                                            <div class="row fields">
+                                                <div class="col-6">
                                                     <label class="form-label">Family Status :</label>
                                                 </div>
-                                                <div class="col-5">
+                                                <div class="col-6">
                                                     <select class="select form-control" name="fam_stat">
                                                         <option selected>Select option</option>
-                                                        <option value="1">Single / not married</option>
+                                                        <option value="0">Single / not married</option>
                                                         <option value="1">Separated</option>
-                                                        <option value="1">Widow</option>
-                                                        <option value="0">Married</option>
-                                                        <option value="0">Civil marriage</option>
+                                                        <option value="2">Widow</option>
+                                                        <option value="3">Married</option>
+                                                        <option value="4">Civil marriage</option>
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="row" style="margin-bottom:7px">
-                                                <div class="col-5">
+                                            <div class="row fields">
+                                                <div class="col-6">
                                                     <label class="form-label">Housing Type :</label>
                                                 </div>
-                                                <div class="col-5">
+                                                <div class="col-6">
                                                     <select class="select form-control" name="hou_type">
                                                         <option selected>Select option</option>
-                                                        <option value="1">House / apartment</option>
+                                                        <option value="0">House / apartment</option>
                                                         <option value="1">Municipal apartment</option>
-                                                        <option value="1">Rented apartment</option>
-                                                        <option value="1">Office apartment</option>
-                                                        <option value="1">Co-op apartment</option>
-                                                        <option value="0">With parents</option>
+                                                        <option value="2">Rented apartment</option>
+                                                        <option value="3">Office apartment</option>
+                                                        <option value="4">Co-op apartment</option>
+                                                        <option value="5">With parents</option>
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="row" style="margin-bottom:7px">
-                                                <div class="col-5">
+                                            <div class="row fields">
+                                                <div class="col-6">
                                                     <label class="form-label">Age :</label>
                                                 </div>
-                                                <div class="col-5">
+                                                <div class="col-6">
                                                     <input type="number" class="select form-control" name="age" placeholder="Enter Your Age" required>
                                                 </div>
                                             </div>
-                                            <div class="row" style="margin-bottom:7px">
-                                                <div class="col-5">
+                                            <div class="row fields">
+                                                <div class="col-6">
                                                     <label class="form-label">Years of Experience :</label>
                                                 </div>
-                                                <div class="col-5">
+                                                <div class="col-6">
                                                     <input type="number" class="select form-control" name="experience" placeholder="Enter Years of Experience" required>
                                                 </div>
                                             </div>
-                                            <div class="row" style="margin-bottom:7px">
-                                                <div class="col-5">
+                                            <div class="row fields">
+                                                <div class="col-6">
                                                     <label class="form-label">Occupation Type :</label>
                                                 </div>
-                                                <div class="col-5">
+                                                <div class="col-6">
                                                     <select class="select form-control" name="occ">
                                                         <option selected>Select option</option>
                                                         <option value="1">Accountants</option>
@@ -256,59 +305,64 @@
                                                     </select>
                                                 </div>
                                             </div>
-
-                                            <div class="row" style="margin-bottom:7px">
-                                                <div class="col-5">
-                                                    <label class="form-label">No Of Paid Off :</label>
+                                            <div class="row fields">
+                                                <div class="col-6">
+                                                    <label class="form-label">Family Members :</label>
                                                 </div>
-                                                <div class="col-5">
-                                                    <input type="number" class="select form-control" name="paid_off" min="0" max="50" placeholder="0-50" required>
-                                                </div>
-                                            </div>
-                                            <div class="row" style="margin-bottom:7px">
-                                                <div class="col-5">
-                                                    <label class="form-label">No Of Past Dues :</label>
-                                                </div>
-                                                <div class="col-5">
-                                                    <input type="number" class="select form-control" name="past_dues" min="0" max="60" placeholder="0-60" required>
+                                                <div class="col-6">
+                                                    <input type="number" class="select form-control" name="fam_mem" placeholder="Enter Years of Experience" required>
                                                 </div>
                                             </div>
-                                            <div class="row" style="margin-bottom:7px">
-                                                <div class="col-5">
-                                                    <label class="form-label">No Of No Loan :</label>
+                                            <div class="row fields">
+                                                <div class="col-6">
+                                                    <label class="form-label">Month Balance :</label>
                                                 </div>
-                                                <div class="col-5">
-                                                    <input type="number" class="select form-control" name="no_loan" min="0" max="20" placeholder="0-20" required>
+                                                <div class="col-6">
+                                                    <input type="number" class="select form-control" name="month" placeholder="Enter Month Balance" required>
                                                 </div>
                                             </div>
 
                                         </div>
 
                                         <div class="mt-2 pt-1">
-                                            <div class="row">
-                                                <div class="col-5">
-                                                    <button type="reset" class="btn btn-danger btn-block">Cancel</button>
+                                            <div class="row fields">
+                                                <div class="col-6">
+                                                    <button type="reset" class="btn btn-danger btn-lg ms-2">Cancel</button>
                                                 </div>
-                                                <div class="col-5">
-                                                    <input class="btn btn-success btn-block" type="submit" value="Submit"/>
+                                                <div class="col-6">
+                                                    <input class="btn btn-success btn-lg ms-2" type="submit" value="Submit"/>
                                                 </div>
-
                                             </div>
+                                            <div class="row fields"></div>
                                         </div>
-
-
                                     </div>
                                 </form>
 
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="column">
-            <div class="pd_text">
-                {{ prediction_text }}
+            <div class="row">
+                <img
+                        src="{{ url_for('static', filename='scatterPlot.png' ) }} " width="50%" height="600px"
+                        alt="Parallel Plot for generated rules"
+                        class="img-fluid images"
+                        style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem; margin-top:50px; padding-right:10px;"
+                />
+            </div>
+            <div class="text-block">
+                <div class="row">
+                    <div class="pd_text">
+                        {{ prediction_text }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="pd_result">
+                        {{ prediction_output }}
+                    </div>
+                </div>
             </div>
         </div>
     </div>

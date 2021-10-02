@@ -10,14 +10,14 @@ import pickle
 import warnings
 warnings.filterwarnings('ignore')
 
-def predict_classification(gender, car, realty, child, income, income_type, educ_type, fam_stat, hou_type, age, exp, occ, paid_off, past_dues, no_loan):
+def predict_classification(gender, car, realty, child, income, income_type, educ_type, fam_stat, hou_type, age, exp, occ, fam_mem, month):
     dataset = pd.read_csv('Credit_Card_final.csv')
 
-    dataset = dataset.iloc[:, 1:18]
+    dataset = dataset.iloc[:, 1:16]
     # print(dataset.head())
     # Your code goes here
-    X = dataset.drop('target', axis=1).values # Input features (attributes)
-    y = dataset['target'].values # Target vector
+    X = dataset.drop('STATUS', axis=1).values # Input features (attributes)
+    y = dataset['STATUS'].values # Target vector
     # print('X shape: {}'.format(np.shape(X)))
     # print('y shape: {}'.format(np.shape(y)))
 
@@ -37,8 +37,7 @@ def predict_classification(gender, car, realty, child, income, income_type, educ
     pickle.dump(rf, open('model.pkl', 'wb'))
 
     model = pickle.load(open('model.pkl', 'rb'))
-    output = model.predict([[gender, car, realty, child, income, income_type, educ_type, fam_stat, hou_type, age, exp, occ,
-                             paid_off, past_dues, no_loan]])
+    output = model.predict([[gender, car, realty, child, income, income_type, educ_type, fam_stat, hou_type, age, exp, occ, fam_mem, month]])
 
     # print('Customer is : ', output)
 

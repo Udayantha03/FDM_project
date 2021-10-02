@@ -51,22 +51,27 @@ def predict():
         fields_10 = request.form.get('age')
         fields_11 = request.form.get('experience')
         fields_12 = request.form.get('occ')
+        fields_13 = request.form.get('fam_mem')
+        fields_14 = request.form.get('month')
 
-        fields_13 = request.form.get('paid_off')
-        fields_14 = request.form.get('past_dues')
-        fields_15 = request.form.get('no_loan')
+        prediction = md.predict_classification(fields_1, fields_2, fields_3, fields_4, fields_5, fields_6, fields_7, fields_8, fields_9, fields_10, fields_11, fields_12, fields_13, fields_14)
 
-        prediction = md.predict_classification(fields_1, fields_2, fields_3, fields_4, fields_5, fields_6, fields_7, fields_8,
-                                               fields_9, fields_10, fields_11, fields_12, fields_13, fields_14, fields_15,
-                                               )
+        print("prediction", prediction)
+        if prediction == 0:
+            output = 'Past Dues'
+        elif prediction == 1:
+            output = 'More than 30 days Past Dues'
+        elif prediction == 2:
+            output = 'Paid Off'
+        elif prediction == 3:
+            output = 'No Loan'
 
-        print("prediction",prediction)
-        if prediction == 1:
-            output = 'GOOD'
-        else:
-            output = 'BAD'
+        if prediction == 0 or prediction == 1:
+            result = 'Customer is not Eligible'
+        elif prediction == 2 or prediction == 3:
+            result = 'Customer is Eligible'
 
-    return render_template('classification.html', prediction_text='Customer is {}'.format(output))
+    return render_template('classification.html', prediction_text='Status is {}'.format(output), prediction_output= 'Result is : {}'.format(result))
 
 
 @app.route("/rule", methods=["GET", "POST"])

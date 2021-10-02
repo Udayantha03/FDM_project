@@ -8,7 +8,7 @@ from mlxtend.frequent_patterns import apriori
 from mlxtend.frequent_patterns import association_rules
 
 
-def recommend_product(item_list):
+def recommend_product(item1, item2, item3):
     df = pd.read_csv("dataset_group.csv", header=None)
     df.columns = ["Date", "ID", "Items"]
 
@@ -36,21 +36,12 @@ def recommend_product(item_list):
     frequent_itemsets = apriori(df.drop(['ID'], axis=1), min_support=0.3, use_colnames=True)
     frequent_itemsets['length'] = frequent_itemsets['itemsets'].apply(lambda x: len(x))
     rules = association_rules(frequent_itemsets, metric="confidence", min_threshold=0.1)
-
-    rules['antecedent'] = rules['antecedents'].apply(lambda antecedent: list(antecedent))
-    rules['consequent'] = rules['consequents'].apply(lambda consequent: list(consequent))
-    rules['rule'] = rules.index
     print(rules)
-
+    consequent_list = rules.consequents[rules.antecedents.apply(str).str.contains(item1, item2)]
     cons_list = []
-    for i in range(1, len(rules)):
-        check = all(item in (rules['antecedent'][i]) for item in item_list)
-        if check is True:
-            c_list = set(list(rules['consequents'])[i])
-            cons_list.append(c_list)
-    print(cons_list)
-    #print(cons_list[0])
-    #print(" , ".join(cons_list[4]))
+    for i in range(0, len(consequent_list)):
+        c_list = set(list(consequent_list)[i])
+        cons_list.append(c_list)
 
     return cons_list
 

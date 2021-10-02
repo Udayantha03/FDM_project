@@ -73,6 +73,7 @@ def predict():
 def pattern_analysis():
     listed = ""
     items_selected = []
+    item_list = []
     if request.method == "POST":
         item_select1 = request.form.get('item_select1')
         item_select2 = request.form.get('item_select2')
@@ -80,13 +81,16 @@ def pattern_analysis():
 
         if item_select1 != "0":
             items_selected.append(item_select1+ "    ")
+            item_list.append(item_select1)
         if item_select2 != "0":
             items_selected.append(item_select2)
+            item_list.append(item_select2)
         if item_select3 != "0":
             items_selected.append(item_select3)
+            item_list.append(item_select3)
 
         item_selected = " , ".join([str(item) for item in items_selected])
-        listed = util.recommend_product(item_select1, item_select2, item_select3)
+        listed = util.recommend_product(item_list)
 
     return render_template('association.html', pattern1=listed,items=item_selected)
 

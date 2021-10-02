@@ -19,18 +19,22 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"/>
     <style type="text/css">
-    li {
-     border-top: 1px solid beige;
-     padding: .3em 0;
-    }
+        li {
+            border-top: 1px solid beige;
+            padding: .3em 0;
+        }
 
-    ul {
-     margin-left: 40px;
-     padding-left: 0px;
-     border-bottom: 1px solid beige;
-     list-style: square inside url("sqpurple.gif");
-     width: 75%;
-    }
+        ul {
+            margin-left: 40px;
+            padding-left: 0px;
+            border-bottom: 1px solid beige;
+            list-style: square inside url("sqpurple.gif");
+            width: 75%;
+        }
+        table, th, td {
+          border: 1px solid black;
+          border-collapse: collapse;
+        }
     </style>
 </head>
 <body id="page-top">
@@ -59,43 +63,33 @@
     </div>
 </header>
 
-
-<section class="vh-100 gradient-custom">
-    <div class="container py-5 h-100">
-        <div class="row justify-content-center align-items-center h-50">
-            <div class="col-12 col-lg-9 col-xl-7">
-                <div class="card shadow-2-strong card-registration" style="border-radius: 15px;float:left;">
-                <div class="card shadow-2-strong card-registration" style="border-radius: 15px;float:right;">
-                    <img src="{{url_for('static', filename='plot1.png' ) }}"/>
-                </div>
-                    <div class="card-body p-3 p-md-5">
-                        <form action = "/rule" method = "POST">
-                            <div class="row">
-                                <div class="col-md-5 mb-2">
-                                    <div class="form-outline">
-                                        <label class="form-label">Select Items to Proceed ... </label>
-                                    </div>
-                                </div>
-                                <div class="container">
+<section class="vh-200 gradient-custom">
+    <div class="container py-8 h-200">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col">
+                <div class="card card-registration card-registration-2 my-4">
+                    <div class="row g-0">
+                        <div class="col-xl-6 d-none d-xl-block">
+                            <img
+                                    src="{{ url_for('static', filename='plot1.png' ) }} " width="90%" height="600px"
+                                    alt="Parallel Plot for generated rules"
+                                    class="img-fluid"
+                                    style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;"
+                            />
+                        </div>
+                        <div class="col-xl-6  bg-indigo">
+                            <div class="card-body p-md-5 text-white bg-indigo">
+                                <form action="/rule" method="POST">
+                                    <h3 class="mb-5 text-uppercase">Select Items to Proceed ... </h3>
                                     <div class="row">
-                                        <div class="col-4">
-                                            <select class="select form-control" name = "item_select1">
-                                                <option value="0"></option>
-                                                <option value="pork">pork</option>
-                                                <option value="sandwich bags">sandwich bags</option>
-                                                <option value="lunch meat">lunch meat</option>
-                                                <option value="all- purpose">all- purpose</option>
-                                                <option value="flour">flour</option>
-                                                <option value="soda">soda</option>
-                                                <option value="butter">butter</option>
-                                                <option value="vegetables">vegetables</option>
-                                                <option value="soap">soap</option>
-                                                <option value="hand soap">hand soap</option>
-                                                <option value="poultry">poultry</option>
-                                            </select>
+                                        <div class="col-md-4 mb-4">
+
+                                            <label class="form-check-label" >Select Item 1</label>
+
                                         </div>
-                                        <div class="col-4">
-                                            <select class="select form-control" name = "item_select2">
+                                        <div class="col-md-6 mb-4">
+
+                                            <select class="select form-control" name="item_select1">
                                                 <option value="0"></option>
                                                 <option value="pork">pork</option>
                                                 <option value="sandwich bags">sandwich bags</option>
@@ -109,41 +103,92 @@
                                                 <option value="hand soap">hand soap</option>
                                                 <option value="poultry">poultry</option>
                                             </select>
-                                        </div>
-                                        <div class="col-4">
-                                            <select class="select form-control" name = "item_select3">
-                                                <option value="0"></option>
-                                                <option value="pork">pork</option>
-                                                <option value="sandwich bags">sandwich bags</option>
-                                                <option value="lunch meat">lunch meat</option>
-                                                <option value="all- purpose">all- purpose</option>
-                                                <option value="flour">flour</option>
-                                                <option value="soda">soda</option>
-                                                <option value="butter">butter</option>
-                                                <option value="vegetables">vegetables</option>
-                                                <option value="soap">soap</option>
-                                                <option value="hand soap">hand soap</option>
-                                                <option value="poultry">poultry</option>
-                                            </select>
+
                                         </div>
                                     </div>
-                                </div>
+                                                     <div class="row">
+                                        <div class="col-md-4 mb-4">
 
-                                <div class="mt-4 pt-2">
-                                    <input class="btn btn-primary btn-sm" type="submit" value="Submit"/>
-                                </div>
-                                <div class="mt-4 pt-2">
-                                    {%  if pattern1 %}
-                                        <h3 style="font-family: arial;font-size: 18pt;color: blue;">{{pattern1|length}} combinations for {{items}} as antecedents</h3>
-                                        <ul>
-                                        {% for i in range (0,pattern1|length) %}
-                                            <li>{{items}} -> {{ pattern1[i] }}</li>
-                                        {% endfor %}
-                                        </ul>
-                                    {%endif%}
-                                </div>
+                                            <label class="form-check-label" for="maleGender">Select Item 2</label>
+
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+
+                                            <select class="select form-control" name="item_select2">
+                                                <option value="0"></option>
+                                                <option value="pork">pork</option>
+                                                <option value="sandwich bags">sandwich bags</option>
+                                                <option value="lunch meat">lunch meat</option>
+                                                <option value="all- purpose">all- purpose</option>
+                                                <option value="flour">flour</option>
+                                                <option value="soda">soda</option>
+                                                <option value="butter">butter</option>
+                                                <option value="vegetables">vegetables</option>
+                                                <option value="soap">soap</option>
+                                                <option value="hand soap">hand soap</option>
+                                                <option value="poultry">poultry</option>
+                                            </select>
+
+                                        </div>
+                                    </div>
+                                                     <div class="row">
+                                        <div class="col-md-4 mb-4">
+
+                                            <label class="form-check-label" for="maleGender">Select Item 3</label>
+
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+
+                                            <select class="select form-control" name="item_select3">
+                                                <option value="0"></option>
+                                                <option value="pork">pork</option>
+                                                <option value="sandwich bags">sandwich bags</option>
+                                                <option value="lunch meat">lunch meat</option>
+                                                <option value="all- purpose">all- purpose</option>
+                                                <option value="flour">flour</option>
+                                                <option value="soda">soda</option>
+                                                <option value="butter">butter</option>
+                                                <option value="vegetables">vegetables</option>
+                                                <option value="soap">soap</option>
+                                                <option value="hand soap">hand soap</option>
+                                                <option value="poultry">poultry</option>
+                                            </select>
+
+                                        </div>
+                                    </div>
+
+
+                                    <div class="d-flex justify-content-end pt-3">
+                                        <button type="button" class="btn btn-warning btn-lg ms-2">Clear</button>
+                                        <button type="submit" value="Submit" class="btn btn-warning btn-lg ms-2">
+                                            Show Consequent Products
+                                        </button>
+                                    </div>
+                                    <div class="mt-4 pt-2">
+                                        {% if pattern1 %}
+                                            <h3 style="font-family: arial;font-size: 18pt;color: black;">{{ pattern1|length }}
+                                                Consequent Products for {{ items }} </h3>
+                                            <ul>
+                                                {% for i in range (0,pattern1|length) %}
+                                                    <li> {{ " , ".join(pattern1[i]) }}</li>
+                                                {% endfor %}
+                                            </ul>
+                                            <table class="table  table-sm table-hover table-striped" style="width:75%" id = "tableWithBgImage">
+                                            {% for i in range (0,pattern1|length) %}
+                                                  <tr class="table-danger">
+                                                    <td class="table-warning">{{ " , ".join(pattern1[i]) }}</td>
+                                                  </tr>
+                                            {% endfor %}
+                                            </table>
+                                        {% else %}
+                                            {% if items %}
+                                                <h3 style="font-family: arial;font-size: 18pt;color: blue;">No combinations for {{ items }}</h3>
+                                            {% endif %}
+                                        {% endif %}
+                                    </div>
+                                </form>
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>

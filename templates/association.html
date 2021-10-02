@@ -31,6 +31,10 @@
             list-style: square inside url("sqpurple.gif");
             width: 75%;
         }
+        table, th, td {
+          border: 2px solid black;
+          border-collapse: collapse;
+        }
     </style>
 </head>
 <body id="page-top">
@@ -59,8 +63,8 @@
     </div>
 </header>
 
-<section class="vh-200 gradient-custom">
-    <div class="container py-8 h-200">
+<section class="vh-400 gradient-custom">
+    <div class="container py-10 h-500">
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col">
                 <div class="card card-registration card-registration-2 my-4">
@@ -155,20 +159,22 @@
 
 
                                     <div class="d-flex justify-content-end pt-3">
-                                        <button type="button" class="btn btn-light btn-lg">Reset</button>
+                                        <button type="button" class="btn btn-warning btn-lg ms-2">Clear</button>
                                         <button type="submit" value="Submit" class="btn btn-warning btn-lg ms-2">
-                                            Submit
+                                            Show Consequent Products
                                         </button>
                                     </div>
                                     <div class="mt-4 pt-2">
                                         {% if pattern1 %}
-                                            <h3 style="font-family: arial;font-size: 18pt;color: blue;">{{ pattern1|length }}
-                                                combinations for {{ items }} as antecedents</h3>
-                                            <ul>
-                                                {% for i in range (0,pattern1|length) %}
-                                                    <li>{{ items }} -> {{ pattern1[i] }}</li>
-                                                {% endfor %}
-                                            </ul>
+                                            <h3 style="font-family: arial;font-size: 18pt;color: black;">{{ pattern1|length }}
+                                                Consequent Products for {{ items }} </h3>
+                                            <table class="table table-sm table-hover table-striped" style="width:100% ">
+                                            {% for i in range (0,pattern1|length) %}
+                                                  <tr >
+                                                    <td>{{ " , ".join(pattern1[i]) }}</td>
+                                                  </tr>
+                                            {% endfor %}
+                                            </table>
                                         {% else %}
                                             {% if items %}
                                                 <h3 style="font-family: arial;font-size: 18pt;color: blue;">No combinations for {{ items }}</h3>

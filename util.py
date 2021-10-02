@@ -33,14 +33,14 @@ def recommend_product(item_list):
 
     df.drop('Items', inplace=True, axis=1)
 
-    frequent_itemsets = apriori(df.drop(['ID'], axis=1), min_support=0.3, use_colnames=True)
+    frequent_itemsets = apriori(df.drop(['ID'], axis=1), min_support=0.2, use_colnames=True)
     frequent_itemsets['length'] = frequent_itemsets['itemsets'].apply(lambda x: len(x))
     rules = association_rules(frequent_itemsets, metric="confidence", min_threshold=0.1)
 
     rules['antecedent'] = rules['antecedents'].apply(lambda antecedent: list(antecedent))
     rules['consequent'] = rules['consequents'].apply(lambda consequent: list(consequent))
     rules['rule'] = rules.index
-    print(rules)
+    print(rules['antecedent'])
 
     cons_list = []
     for i in range(1, len(rules)):

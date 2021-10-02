@@ -31,9 +31,10 @@
             list-style: square inside url("sqpurple.gif");
             width: 75%;
         }
+
         table, th, td {
-          border: 2px solid black;
-          border-collapse: collapse;
+            border: 2px solid black;
+            border-collapse: collapse;
         }
     </style>
 </head>
@@ -47,10 +48,14 @@
                 aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                <li class="nav-item"><a class="nav-link" href="{{ url_for('welcome') }}">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ url_for('classification_start') }}">Classification</a>
+                <li class="nav-item" style="font-size: 20pt;"><a class="nav-link"
+                                                                 href="{{ url_for('welcome') }}">Home</a></li>
+                <li class="nav-item" style="font-size: 14pt;"><a class="nav-link"
+                                                                 href="{{ url_for('classification_start') }}">Classification</a>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="{{ url_for('association_start') }}">Association</a></li>
+                <li class="nav-item" style="font-size: 14pt;"><a class="nav-link"
+                                                                 href="{{ url_for('association_start') }}">Association</a>
+                </li>
             </ul>
         </div>
     </div>
@@ -84,7 +89,8 @@
                                     <div class="row">
                                         <div class="col-md-4 mb-4">
 
-                                            <label class="form-check-label" >Select Item 1</label>
+                                            <label class="form-check-label" style="font-size: 17pt;">Select Item
+                                                1</label>
 
                                         </div>
                                         <div class="col-md-6 mb-4">
@@ -94,7 +100,7 @@
                                                 <option value="pork">pork</option>
                                                 <option value="sandwich bags">sandwich bags</option>
                                                 <option value="lunch meat">lunch meat</option>
-                                                <option value="all- purpose">all- purpose</option>
+                                                <option value="noodles">noodles</option>
                                                 <option value="flour">flour</option>
                                                 <option value="soda">soda</option>
                                                 <option value="butter">butter</option>
@@ -102,14 +108,41 @@
                                                 <option value="soap">soap</option>
                                                 <option value="hand soap">hand soap</option>
                                                 <option value="poultry">poultry</option>
+                                                <option value="beef">beef</option>
+                                                <option value="aluminum foil">aluminum foil</option>
+                                                <option value="dinner rolls">dinner rolls</option>
+                                                <option value="shampoo">shampoo</option>
+                                                <option value="mixes">mixes</option>
+                                                <option value="laundry detergent">laundry detergent</option>
+                                                <option value="ice cream">ice cream</option>
+                                                <option value="toilet paper">toilet paper</option>
+                                                <option value="waffles">waffles</option>
+                                                <option value="cheeses">cheeses</option>
+                                                <option value="milk">milk</option>
+                                                <option value="dishwashing liquid/detergent">dishwashing liquid/detergent</option>
+                                                <option value="individual meals">individual meals</option>
+                                                <option value="cereals">cereals</option>
+                                                <option value="tortillas">tortillas</option>
+                                                <option value="spaghetti sauce">spaghetti sauce</option>
+                                                <option value="ketchup">ketchup</option>
+                                                <option value="sandwich loaves">sandwich loaves</option>
+                                                <option value="bagels">bagels</option>
+                                                <option value="eggs">eggs</option>
+                                                <option value="juice">juice</option>
+                                                <option value="pasta">pasta</option>
+                                                <option value="paper towels">paper towels</option>
+                                                <option value="coffee/tea">coffee/tea</option>
+                                                <option value="fruits">fruits</option>
+                                                <option value="sugar">sugar</option>
                                             </select>
 
                                         </div>
                                     </div>
-                                                     <div class="row">
+                                    <div class="row">
                                         <div class="col-md-4 mb-4">
 
-                                            <label class="form-check-label" for="maleGender">Select Item 2</label>
+                                            <label class="form-check-label" style="font-size: 17pt;">Select Item
+                                                2</label>
 
                                         </div>
                                         <div class="col-md-6 mb-4">
@@ -117,9 +150,10 @@
                                             <select class="select form-control" name="item_select2">
                                                 <option value="0"></option>
                                                 <option value="pork">pork</option>
+                                                <option value="eggs">eggs</option>
                                                 <option value="sandwich bags">sandwich bags</option>
                                                 <option value="lunch meat">lunch meat</option>
-                                                <option value="all- purpose">all- purpose</option>
+                                                <option value="noodles">noodles</option>
                                                 <option value="flour">flour</option>
                                                 <option value="soda">soda</option>
                                                 <option value="butter">butter</option>
@@ -127,14 +161,40 @@
                                                 <option value="soap">soap</option>
                                                 <option value="hand soap">hand soap</option>
                                                 <option value="poultry">poultry</option>
+                                                <option value="beef">beef</option>
+                                                <option value="aluminum foil">aluminum foil</option>
+                                                <option value="dinner rolls">dinner rolls</option>
+                                                <option value="shampoo">shampoo</option>
+                                                <option value="mixes">mixes</option>
+                                                <option value="laundry detergent">laundry detergent</option>
+                                                <option value="ice cream">ice cream</option>
+                                                <option value="toilet paper">toilet paper</option>
+                                                <option value="waffles">waffles</option>
+                                                <option value="cheeses">cheeses</option>
+                                                <option value="milk">milk</option>
+                                                <option value="dishwashing liquid/detergent">dishwashing iquid/detergent</option>
+                                                <option value="individual meals">individual meals</option>
+                                                <option value="cereals">cereals</option>
+                                                <option value="tortillas">tortillas</option>
+                                                <option value="spaghetti sauce">spaghetti sauce</option>
+                                                <option value="ketchup">ketchup</option>
+                                                <option value="sandwich loaves">sandwich loaves</option>
+                                                <option value="bagels">bagels</option>
+                                                <option value="juice">juice</option>
+                                                <option value="pasta">pasta</option>
+                                                <option value="paper towels">paper towels</option>
+                                                <option value="coffee/tea">coffee/tea</option>
+                                                <option value="fruits">fruits</option>
+                                                <option value="sugar">sugar</option>
                                             </select>
 
                                         </div>
                                     </div>
-                                                     <div class="row">
+                                    <div class="row">
                                         <div class="col-md-4 mb-4">
 
-                                            <label class="form-check-label" for="maleGender">Select Item 3</label>
+                                            <label class="form-check-label" style="font-size: 17pt;">Select Item
+                                                3</label>
 
                                         </div>
                                         <div class="col-md-6 mb-4">
@@ -144,7 +204,7 @@
                                                 <option value="pork">pork</option>
                                                 <option value="sandwich bags">sandwich bags</option>
                                                 <option value="lunch meat">lunch meat</option>
-                                                <option value="all- purpose">all- purpose</option>
+                                                <option value="noodles">noodles</option>
                                                 <option value="flour">flour</option>
                                                 <option value="soda">soda</option>
                                                 <option value="butter">butter</option>
@@ -152,6 +212,32 @@
                                                 <option value="soap">soap</option>
                                                 <option value="hand soap">hand soap</option>
                                                 <option value="poultry">poultry</option>
+                                                <option value="beef">beef</option>
+                                                <option value="aluminum foil">aluminum foil</option>
+                                                <option value="dinner rolls">dinner rolls</option>
+                                                <option value="shampoo">shampoo</option>
+                                                <option value="mixes">mixes</option>
+                                                <option value="laundry detergent">laundry detergent</option>
+                                                <option value="ice cream">ice cream</option>
+                                                <option value="toilet paper">toilet paper</option>
+                                                <option value="waffles">waffles</option>
+                                                <option value="cheeses">cheeses</option>
+                                                <option value="milk">milk</option>
+                                                <option value="dishwashing liquid/detergent">dishwashing liquid/detergent</option>
+                                                <option value="individual meals">individual meals</option>
+                                                <option value="cereals">cereals</option>
+                                                <option value="tortillas">tortillas</option>
+                                                <option value="spaghetti sauce">spaghetti sauce</option>
+                                                <option value="ketchup">ketchup</option>
+                                                <option value="sandwich loaves">sandwich loaves</option>
+                                                <option value="bagels">bagels</option>
+                                                <option value="eggs">eggs</option>
+                                                <option value="juice">juice</option>
+                                                <option value="pasta">pasta</option>
+                                                <option value="paper towels">paper towels</option>
+                                                <option value="coffee/tea">coffee/tea</option>
+                                                <option value="fruits">fruits</option>
+                                                <option value="sugar">sugar</option>
                                             </select>
 
                                         </div>
@@ -166,18 +252,19 @@
                                     </div>
                                     <div class="mt-4 pt-2">
                                         {% if pattern1 %}
-                                            <h3 style="font-family: arial;font-size: 18pt;color: black;">{{ pattern1|length }}
+                                            <h3 class="mb-5 text-uppercase">{{ pattern1|length }}
                                                 Consequent Products for {{ items }} </h3>
                                             <table class="table table-sm table-hover table-striped" style="width:100% ">
-                                            {% for i in range (0,pattern1|length) %}
-                                                  <tr >
-                                                    <td>{{ " , ".join(pattern1[i]) }}</td>
-                                                  </tr>
-                                            {% endfor %}
+                                                {% for i in range (0,pattern1|length) %}
+                                                    <tr>
+                                                        <td style="font-size: 17pt;color: black;">{{ " , ".join(pattern1[i]) }}</td>
+                                                    </tr>
+                                                {% endfor %}
                                             </table>
                                         {% else %}
                                             {% if items %}
-                                                <h3 style="font-family: arial;font-size: 18pt;color: blue;">No combinations for {{ items }}</h3>
+                                                <h3 style="font-family: arial;font-size: 18pt;color: white;">No
+                                                    combinations for {{ items }}</h3>
                                             {% endif %}
                                         {% endif %}
                                     </div>

@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from flask import Flask, request, jsonify, render_template
+import util as util
 import pickle
 import model as md
 from pandas.plotting import parallel_coordinates
